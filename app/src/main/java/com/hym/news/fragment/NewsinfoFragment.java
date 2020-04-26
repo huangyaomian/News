@@ -11,11 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hym.news.R;
+import com.hym.news.bean.TypeBean;
+
+import java.util.List;
 
 /**
 
  */
 public class NewsinfoFragment extends Fragment {
+
+
 
 
     @Override
