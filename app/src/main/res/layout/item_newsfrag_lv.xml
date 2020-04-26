@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_newsfrag_rv_title"
+        android:layout_marginTop="10dp"
+        android:text="明星搞笑视频曝光，他居然参加过这个节目"
+        android:textColor="@color/grey"
+        android:textSize="22sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:id="@+id/item_news_iv1"
+            android:layout_weight="1"
+            android:src="@mipmap/bg_defualt_220x150"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:id="@+id/item_news_iv2"
+            android:layout_weight="1"
+            android:src="@mipmap/bg_defualt_220x150"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:id="@+id/item_news_iv3"
+            android:layout_weight="1"
+            android:src="@mipmap/bg_defualt_220x150"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_news_tv_source"
+        android:text="新浪"
+        android:drawableLeft="@mipmap/topic_user_default"
+        android:drawablePadding="15dp"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_news_tv_time"
+            android:text="2020-4-26 08:41"
+            android:layout_centerVertical="true"
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
