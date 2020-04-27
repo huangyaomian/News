@@ -20,6 +20,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Typeface;
@@ -43,6 +44,7 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.Locale;
 
 import com.hym.news.R;
+
 
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
@@ -98,6 +100,11 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	private int tabBackgroundResId = R.drawable.background_tab;
 
 	private Locale locale;
+
+	//正在被选中的位置
+	private int selectionPosition;
+	private int selectionTextSize = 18;
+	private int selectionTextColor = Color.BLUE;
 
 	public PagerSlidingTabStrip(Context context) {
 		this(context, null);
@@ -281,6 +288,11 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 						tab.setText(tab.getText().toString().toUpperCase(locale));
 					}
 				}
+//				判断这个位置是否为选中的位置，如果是选中位置，就改变文字的颜色和文字的尺寸
+				if (i == selectionPosition) {
+					tab.setTextColor(selectionTextColor);
+					tab.setTextSize(selectionTextSize);
+				}
 			}
 		}
 
@@ -381,6 +393,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 		@Override
 		public void onPageSelected(int position) {
+			selectionPosition = position;
+			updateTabStyles();
 			if (delegatePageListener != null) {
 				delegatePageListener.onPageSelected(position);
 			}
