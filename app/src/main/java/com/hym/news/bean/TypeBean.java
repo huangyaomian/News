@@ -1,10 +1,12 @@
 package com.hym.news.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TypeBean {
+public class TypeBean implements Serializable {
 
+    private static final long serialVersionUID = -1943961352036134112L;
     private int id;
     private String title;
     private String url;
@@ -18,6 +20,7 @@ public class TypeBean {
     }
 
     public TypeBean() {
+
     }
 
     public int getId() {

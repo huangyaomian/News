@@ -4,7 +4,7 @@ public class NewsURL {
     //公共的key
     public static String key = "5acd1c8e8f15bf81d68a6c6524399905";
     //公共部分
-    public static String info_url = "http://v.juhe.cn/toutiao/index?key=" + key + "&type=";
+    public static String info_url = "https://v.juhe.cn/toutiao/index?key=" + key + "&type=";
     //头条
     public static String headline_url = info_url +  "top";
     //社会

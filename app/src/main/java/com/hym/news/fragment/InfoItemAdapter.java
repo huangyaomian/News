@@ -92,14 +92,14 @@ public class InfoItemAdapter extends BaseAdapter {
             holder.iv2.setVisibility(View.GONE);
         }else {
             holder.iv2.setVisibility(View.VISIBLE);
-            imageLoader.displayImage(pic1,holder.iv2,options);
+            imageLoader.displayImage(pic2,holder.iv2,options);
         }
 
         if (TextUtils.isEmpty(pic3)) {
             holder.iv3.setVisibility(View.GONE);
         }else {
             holder.iv3.setVisibility(View.VISIBLE);
-            imageLoader.displayImage(pic1,holder.iv3,options);
+            imageLoader.displayImage(pic3,holder.iv3,options);
         }
 
         return convertView;
@@ -112,8 +112,13 @@ public class InfoItemAdapter extends BaseAdapter {
         TextView sourceTv;
         @BindView(R.id.item_news_tv_time)
         TextView timeTv;
-        @BindViews({R.id.item_news_iv1,R.id.item_news_iv2,R.id.item_news_iv3})
-        ImageView iv1,iv2,iv3;
+        @BindView(R.id.item_news_iv1)
+        ImageView iv1;
+        @BindView(R.id.item_news_iv2)
+        ImageView iv2;
+        @BindView(R.id.item_news_iv3)
+        ImageView iv3;
+
         public ViewHolder(View view){
             ButterKnife.bind(this,view);
         }

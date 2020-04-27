@@ -1,7 +1,9 @@
 package com.hym.news;
 
+import android.content.Intent;
 import android.icu.util.BuddhistCalendar;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -65,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
         selectTypeList.addAll(typeBeanList);
         for (int i = 0; i < selectTypeList.size(); i++) {
             TypeBean typeBean = selectTypeList.get(i);
+            Log.d("hymmm",typeBean.getUrl());
             NewsinfoFragment newsinfoFragment = new NewsinfoFragment();
             //想fragment當中傳遞數據
             Bundle bundle = new Bundle();
-            bundle.putSerializable("type", (Serializable) typeBean);
+            bundle.putSerializable("type", typeBean);
+
             newsinfoFragment.setArguments(bundle);
             fragmentList.add(newsinfoFragment);
         }
@@ -76,5 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.main_iv_add)
     public void onViewClicked() {
+        Intent intent = new Intent(this, AddItemActivity.class);
+        startActivity(intent);
     }
 }

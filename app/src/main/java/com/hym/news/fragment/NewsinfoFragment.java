@@ -1,6 +1,7 @@
 package com.hym.news.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,10 +42,10 @@ public class NewsinfoFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newsinfo, container, false);
         ButterKnife.bind(this,view);
-        Bundle bundle = new Bundle();
+        Bundle bundle = getArguments();
         TypeBean typeBean = (TypeBean) bundle.getSerializable("type");
         url = typeBean.getUrl();
-
+        Log.d("hymmm",url);
         mData = new ArrayList<>();
 
         //创建listview的适配器对象
