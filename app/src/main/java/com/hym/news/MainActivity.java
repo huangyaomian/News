@@ -3,6 +3,7 @@ package com.hym.news;
 import android.content.Intent;
 import android.icu.util.BuddhistCalendar;
 import android.os.Bundle;
+import android.text.style.TabStopSpan;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.hym.news.bean.TypeBean;
+import com.hym.news.db.DBManager;
 import com.hym.news.fragment.NewsInfoAdapter;
 import com.hym.news.fragment.NewsinfoFragment;
 import com.hym.news.view.PagerSlidingTabStrip;
@@ -63,18 +65,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initPager() {
-        List<TypeBean> typeBeanList = TypeBean.getTypeBean();
+        List<TypeBean> typeBeanList = DBManager.getAllTypelist();
         selectTypeList.addAll(typeBeanList);
         for (int i = 0; i < selectTypeList.size(); i++) {
             TypeBean typeBean = selectTypeList.get(i);
-            Log.d("hymmm",typeBean.getUrl());
-            NewsinfoFragment newsinfoFragment = new NewsinfoFragment();
-            //想fragment當中傳遞數據
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("type", typeBean);
-
-            newsinfoFragment.setArguments(bundle);
-            fragmentList.add(newsinfoFragment);
+            if (typeBean.isShow()) {
+                Log.d("hymmm",typeBean.getUrl());
+                NewsinfoFragment newsinfoFragment = new NewsinfoFragment();
+                //想fragment當中傳遞數據
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("type", typeBean);
+                newsinfoFragment.setArguments(bundle);
+                fragmentList.add(newsinfoFragment);
+            }
         }
     }
 
@@ -82,5 +85,16 @@ public class MainActivity extends AppCompatActivity {
     public void onViewClicked() {
         Intent intent = new Intent(this, AddItemActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        fragmentList.clear();
+        selectTypeList.clear();
+
+        initPager();//重新加載viwepager的顯示頁
+        adapter.notifyDataSetChanged();
+        mMainTabstrip.notifyDataSetChanged();
     }
 }

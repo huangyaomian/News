@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.hym.news.bean.TypeBean;
 
@@ -35,11 +36,17 @@ public class NewsInfoAdapter extends FragmentStatePagerAdapter {
         return fragmentList.size();
     }
 
+    //返回指定位置的標題
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
         TypeBean typeBean = selectTypeList.get(position);
         String title = typeBean.getTitle();
         return title;
+    }
+
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+        return PagerAdapter.POSITION_NONE;
     }
 }
