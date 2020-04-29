@@ -5,12 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".fragment.NewsinfoFragment">
 
-    <ListView
+    <com.hym.news.view.MyListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/news"
+        android:dividerHeight="0.5dp"
+        android:divider="@color/grey"
+        ></com.hym.news.view.MyListView>
+
+  <!--  <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/news"
         android:dividerHeight="1dp"
         android:divider="@color/grey"
         ></ListView>
-
+-->
 </FrameLayout>

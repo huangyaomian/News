@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         mMainVp.setAdapter(adapter);
         //關聯tabstrip和viewPager
         mMainTabstrip.setViewPager(mMainVp);
+        mMainTabstrip.setUnderlineColor(R.color.black);
 
 
     }
