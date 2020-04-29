@@ -40,4 +40,8 @@ dependencies {
     // 必须要有，不然无法绑定点击事件
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
+    //加载中动画的包
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.wang.avi:library:2.1.3'
+
 }

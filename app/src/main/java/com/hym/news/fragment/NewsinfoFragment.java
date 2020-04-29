@@ -1,18 +1,17 @@
 package com.hym.news.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
-import androidx.fragment.app.Fragment;
-
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
+import com.hym.news.DescActivity;
 import com.hym.news.R;
 import com.hym.news.bean.InfoBean;
 import com.hym.news.bean.TypeBean;
@@ -51,8 +50,24 @@ public class NewsinfoFragment extends BaseFragment {
         //创建listview的适配器对象
         adapter = new InfoItemAdapter(getActivity(), mData);
         newsInfo.setAdapter(adapter);
+        setListener();
         loadData(url);
         return view;
+    }
+
+    //设置listview每一项点击事件的函数
+    private void setListener() {
+       newsInfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               InfoBean.ResultBean.DataBean dataBean = mData.get(position);
+               String url = dataBean.getUrl();
+               Intent intent = new Intent(getActivity(), DescActivity.class);
+               intent.putExtra("url",url);
+               startActivity(intent);
+           }
+       });
+
     }
 
     @Override
