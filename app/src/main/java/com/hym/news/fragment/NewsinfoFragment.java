@@ -89,6 +89,7 @@ public class NewsinfoFragment extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 InfoBean.ResultBean.DataBean dataBean = mData.get(position);
                 String url = dataBean.getUrl();
+                Log.d("hymmm",url);
                 Intent intent = new Intent(getActivity(), DescActivity.class);
                 intent.putExtra("url",url);
                 startActivity(intent);
