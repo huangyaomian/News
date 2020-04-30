@@ -22,7 +22,7 @@
             app:pstsTabBackground="@color/white"
             app:pstsDividerColor="#ffffff"
             app:pstsIndicatorHeight="8dp"
-            app:pstsUnderlineHeight="3dp"
+            app:pstsUnderlineHeight="0dp"
             >
 
         </com.hym.news.view.PagerSlidingTabStrip>
