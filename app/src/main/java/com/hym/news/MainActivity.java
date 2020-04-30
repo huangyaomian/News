@@ -84,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.main_iv_add)
     public void onViewClicked() {
-        Intent intent = new Intent(this, AddItemActivity.class);
+//        Intent intent = new Intent(this, AddItemActivity.class);
+//        startActivity(intent);
+
+        Intent intent = new Intent(this, DescActivity.class);
         startActivity(intent);
     }
 
