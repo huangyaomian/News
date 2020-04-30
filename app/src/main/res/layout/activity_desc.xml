@@ -1,21 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layerType="software"
+    android:id="@+id/desc_webviewcontainer"
+    android:background="#F6F7FB"
     >
 
-    <LinearLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/desc_rl1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_iv_back"
+            android:src="@mipmap/bar_img_back"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_tv_title"
+            android:text="詳情"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_below="@id/desc_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/black"
+        android:id="@+id/line"/>
+
+    <com.hym.news.widget.H5NoNetView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <WebView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/webview"
-           ></WebView>
+        android:id="@+id/desc_nonetview"
+        android:layout_below="@id/line"/>
 
-    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/desc_progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_bar_bg"
+        android:layout_below="@id/line"/>
 
-</ScrollView>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webview"
+        android:layout_below="@+id/desc_progressBar"
+        ></WebView>
+
+
+
+
+</RelativeLayout>
+
