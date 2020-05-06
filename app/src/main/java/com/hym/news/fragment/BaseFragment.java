@@ -1,5 +1,7 @@
 package com.hym.news.fragment;
 
+import android.util.Log;
+
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Response;
@@ -7,11 +9,18 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.hym.news.UniteApp;
 
-import javax.xml.transform.ErrorListener;
 
 public class BaseFragment extends Fragment implements Response.Listener<String>,Response.ErrorListener {
 
-    public void loadData(String url){
+    public void initLoadData(String url){
+        Log.d("hymmm","initLoadData:" + url);
+        //创建网络请求对象，stringrequst jsonrequest
+        StringRequest stringRequest = new StringRequest(url, this, this);
+        UniteApp.getHttpQueue().add(stringRequest);
+    }
+
+    public void initMoreData(String url){
+        Log.d("hymmm","initMoreData:" + url);
         //创建网络请求对象，stringrequst jsonrequest
         StringRequest stringRequest = new StringRequest(url, this, this);
         UniteApp.getHttpQueue().add(stringRequest);

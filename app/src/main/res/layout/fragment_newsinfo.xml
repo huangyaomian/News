@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".fragment.NewsinfoFragment">
 
-    <com.hym.news.view.MyListView
+    <!--<com.hym.news.view.MyListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/news"
         android:dividerHeight="0.5dp"
         android:divider="@color/grey"
-        ></com.hym.news.view.MyListView>
+        ></com.hym.news.view.MyListView>-->
 
-  <!--  <ListView
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/news"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/news"
-        android:dividerHeight="1dp"
-        android:divider="@color/grey"
-        ></ListView>
--->
-</FrameLayout>
+        android:dividerHeight="0.5dp"
+        android:divider="@color/grey">
+
+    </com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+
+    <!--  <ListView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/news"
+          android:dividerHeight="1dp"
+          android:divider="@color/grey"
+          ></ListView>
+  -->
+</LinearLayout>

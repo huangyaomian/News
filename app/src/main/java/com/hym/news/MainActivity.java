@@ -1,9 +1,7 @@
 package com.hym.news;
 
 import android.content.Intent;
-import android.icu.util.BuddhistCalendar;
 import android.os.Bundle;
-import android.text.style.TabStopSpan;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -18,7 +16,6 @@ import com.hym.news.fragment.NewsInfoAdapter;
 import com.hym.news.fragment.NewsinfoFragment;
 import com.hym.news.view.PagerSlidingTabStrip;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,11 +81,11 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.main_iv_add)
     public void onViewClicked() {
-//        Intent intent = new Intent(this, AddItemActivity.class);
-//        startActivity(intent);
-
-        Intent intent = new Intent(this, DescActivity.class);
+        Intent intent = new Intent(this, AddItemActivity.class);
         startActivity(intent);
+
+/*        Intent intent = new Intent(this, DescActivity.class);
+        startActivity(intent);*/
     }
 
     @Override

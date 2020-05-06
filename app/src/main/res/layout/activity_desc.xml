@@ -14,10 +14,11 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/desc_iv_back"
             android:src="@mipmap/bar_img_back"
             android:layout_marginLeft="10dp"
+            android:paddingRight="20dp"
             android:layout_centerVertical="true"/>
         <TextView
             android:layout_width="wrap_content"

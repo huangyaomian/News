@@ -60,8 +60,8 @@ public class DescActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-//        url = getIntent().getStringExtra("url");
-        url = "https://mini.eastday.com/a/200430080345029.html?qid=02263";
+        url = getIntent().getStringExtra("url");
+//        url = "https://mini.eastday.com/a/200430080345029.html?qid=02263";
 //        url = "https://m.baidu.com/";
         if (url != null) {
             url = url.trim();

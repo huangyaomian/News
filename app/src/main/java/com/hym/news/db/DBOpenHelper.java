@@ -19,15 +19,15 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sql);
         String insertSql = "insert into itype values(?,?,?,?)";
         sqLiteDatabase.execSQL(insertSql,new Object[]{1,"頭條", NewsURL.headline_url,"true"});
-        sqLiteDatabase.execSQL(insertSql,new Object[]{2,"社會", NewsURL.society_url,"true"});
-        sqLiteDatabase.execSQL(insertSql,new Object[]{3,"國内", NewsURL.home_url,"true"});
-        sqLiteDatabase.execSQL(insertSql,new Object[]{4,"國際", NewsURL.internations_url,"true"});
+        sqLiteDatabase.execSQL(insertSql,new Object[]{2,"精选", NewsURL.recommended_url,"true"});
+        sqLiteDatabase.execSQL(insertSql,new Object[]{3,"汽车", NewsURL.car_url,"false"});
+        sqLiteDatabase.execSQL(insertSql,new Object[]{4,"漫画", NewsURL.comic_url,"false"});
         sqLiteDatabase.execSQL(insertSql,new Object[]{5,"娛樂", NewsURL.entertainment_url,"false"});
         sqLiteDatabase.execSQL(insertSql,new Object[]{6,"體育", NewsURL.sport_url,"false"});
-        sqLiteDatabase.execSQL(insertSql,new Object[]{7,"軍事", NewsURL.military_url,"false"});
-        sqLiteDatabase.execSQL(insertSql,new Object[]{8,"科技", NewsURL.science_url,"false"});
-        sqLiteDatabase.execSQL(insertSql,new Object[]{9,"財經", NewsURL.finance_url,"false"});
-        sqLiteDatabase.execSQL(insertSql,new Object[]{10,"時尚", NewsURL.fashion_url,"false"});
+        sqLiteDatabase.execSQL(insertSql,new Object[]{7,"平顶山", NewsURL.pingdingshan_url,"false"});
+//        sqLiteDatabase.execSQL(insertSql,new Object[]{8,"科技", NewsURL.science_url,"false"});
+//        sqLiteDatabase.execSQL(insertSql,new Object[]{9,"財經", NewsURL.finance_url,"false"});
+//        sqLiteDatabase.execSQL(insertSql,new Object[]{10,"時尚", NewsURL.fashion_url,"false"});
     }
 
     @Override

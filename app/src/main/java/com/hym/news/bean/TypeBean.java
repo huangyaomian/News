@@ -55,7 +55,7 @@ public class TypeBean implements Serializable {
         isShow = show;
     }
 
-    public static List<TypeBean> getTypeBean(){
+    /*public static List<TypeBean> getTypeBean(){
         List<TypeBean> mData = new ArrayList<>();
         TypeBean tb1 = new TypeBean(1, "头条",NewsURL.headline_url, true);
         TypeBean tb2 = new TypeBean(1, "社会",NewsURL.society_url, true);
@@ -80,5 +80,5 @@ public class TypeBean implements Serializable {
         mData.add(tb10);
 
         return mData;
-    }
+    }*/
 }
